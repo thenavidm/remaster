@@ -2,12 +2,16 @@
 
 | Component | Version | Date |
 |---|---|---|
-| Remaster (plugin `remaster`, skill `clone`, npm `@thenavidm/remaster`) | 0.2.0 | 2026-10-04 |
-| CLI (`skills/clone/scripts/remaster.mjs`, 21 commands) | 0.2.0 | 2026-10-04 |
+| Remaster (plugin `remaster`, skill `clone`, npm `@thenavidm/remaster`) | 0.2.1 | 2026-10-04 |
+| CLI (`skills/clone/scripts/remaster.mjs`, 21 commands) | 0.2.1 | 2026-10-04 |
 | Measurement format (`browser/measure.js`, field `v`) | 1 | 2026-10-04 |
 | Agents (`design-critic`, `screen-builder`) | 0.1.0 | 2026-10-04 |
-| Codex plugin, Gemini CLI extension | 0.2.0 | 2026-10-04 |
+| Codex plugin, Gemini CLI extension | 0.2.1 | 2026-10-04 |
 | Node | 18 or later | |
+
+## 0.2.1
+
+The Claude Code agents moved to `claude-agents/`, so Gemini CLI loads the extension without errors.
 
 ## 0.2.0
 

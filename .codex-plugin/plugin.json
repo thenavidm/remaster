@@ -1,12 +1,25 @@
 {
   "name": "remaster",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Clone any app or website with AI agents, then make it better and yours: research what users hate, measure the design, rebuild it clean-room with taste, and prove it with scored gates.",
-  "author": { "name": "Navid Moazzez", "url": "https://navid.me" },
+  "author": {
+    "name": "Navid Moazzez",
+    "url": "https://navid.me"
+  },
   "homepage": "https://github.com/thenavidm/remaster",
   "repository": "https://github.com/thenavidm/remaster",
   "license": "Apache-2.0",
-  "keywords": ["clone any app", "app cloner", "website cloner", "reverse engineering", "competitor research", "design system", "design tokens", "DESIGN.md", "site migration"],
+  "keywords": [
+    "clone any app",
+    "app cloner",
+    "website cloner",
+    "reverse engineering",
+    "competitor research",
+    "design system",
+    "design tokens",
+    "DESIGN.md",
+    "site migration"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Remaster: Clone Any App",
@@ -14,7 +27,11 @@
     "longDescription": "Remaster researches what an app's users hate, measures its design from the live page, rebuilds it clean-room in your stack with real taste, and proves the result with scored gates: structure, parity, a design critic, a copy check and a clean-room sweep. Four modes: a full app, a site or page, one feature into your own app, or a site you own moved to a new stack.",
     "developerName": "Navid Moazzez",
     "category": "Developer Tools",
-    "capabilities": ["Interactive", "Read", "Write"],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://github.com/thenavidm/remaster",
     "privacyPolicyURL": "https://github.com/thenavidm/remaster/blob/main/PRIVACY.md",
     "termsOfServiceURL": "https://github.com/thenavidm/remaster/blob/main/LICENSE",

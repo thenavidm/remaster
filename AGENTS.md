@@ -15,7 +15,7 @@ README).
 | `skills/clone/scripts/browser/measure.js` | The page measurement. One file, run under Playwright by `measure` and by hand in any agent's browser tool |
 | `skills/clone/scripts/data/` | The copy rules and the generic phrases the copy check skips |
 | `skills/clone/templates/` | What `init` copies into a project, and the design, listing and profile templates |
-| `agents/` | The two Claude Code agents. Their rules live in the skill's references, so the agents point there |
+| `claude-agents/` | The two Claude Code agents, named in `.claude-plugin/plugin.json`. Not in `agents/`, because Gemini CLI loads that folder as its own subagents and rejects Claude's format |
 | `.claude-plugin/` | The Claude Code plugin and marketplace manifests |
 | `.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json` | The Codex plugin and its marketplace, pointing at the same `skills/` |
 | `gemini-extension.json` | The Gemini CLI extension, which reads the same `skills/` |

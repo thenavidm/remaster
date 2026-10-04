@@ -1,7 +1,7 @@
 # Remaster: clone any app or website with Claude Code, then make it better
 
 [![npm](https://img.shields.io/npm/v/@thenavidm%2Fremaster?color=orange&label=npm)](https://www.npmjs.com/package/@thenavidm/remaster)
-[![Version](https://img.shields.io/badge/version-0.2.0-blue)](https://github.com/thenavidm/remaster/blob/main/CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.1-blue)](https://github.com/thenavidm/remaster/blob/main/CHANGELOG.md)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/thenavidm/remaster/blob/main/LICENSE)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
@@ -141,7 +141,7 @@ Gemini CLI offers to activate the skill when you ask for a clone.
 
 **Cursor and any other agent that reads Agent Skills**
 
-Use the one-command install above, or copy `skills/clone` into the agent's skills folder. In an agent that doesn't fill in the skill's folder for its scripts, the skill says to use its own folder, or the same CLI from npm: `npx -y @thenavidm/remaster@0.2.0 <command>`. Each agent's own docs: [Codex](https://learn.chatgpt.com/docs/build-skills), [Cursor](https://cursor.com/docs/skills), [Gemini CLI](https://geminicli.com/docs/cli/creating-skills/).
+Use the one-command install above, or copy `skills/clone` into the agent's skills folder. In an agent that doesn't fill in the skill's folder for its scripts, the skill says to use its own folder, or the same CLI from npm: `npx -y @thenavidm/remaster@0.2.1 <command>`. Each agent's own docs: [Codex](https://learn.chatgpt.com/docs/build-skills), [Cursor](https://cursor.com/docs/skills), [Gemini CLI](https://geminicli.com/docs/cli/creating-skills/).
 
 **claude.ai**
 
@@ -282,7 +282,8 @@ remaster/
     scripts/browser/     measure.js, run under Playwright or in any agent's browser tool
     scripts/data/        The copy rules and the generic phrases the copy check skips
     templates/           What init copies into a project, and the design, listing and profile templates
-  agents/                design-critic and screen-builder, for Claude Code
+  claude-agents/         design-critic and screen-builder, for Claude Code only, kept out of the folder
+                         Gemini CLI reads its own agents from
   tests/                 node:test, no dependencies
   AGENTS.md              Rules for agents editing this repo
   CHANGELOG.md           What changed, newest first

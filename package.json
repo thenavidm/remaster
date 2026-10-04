@@ -1,6 +1,6 @@
 {
   "name": "@thenavidm/remaster",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Clone any app or website with Claude Code, Codex, Gemini CLI and other AI agents, then make it better and yours.",
   "type": "module",
   "license": "Apache-2.0",
@@ -35,7 +35,7 @@
   },
   "files": [
     "skills/",
-    "agents/",
+    "claude-agents/",
     ".claude-plugin/",
     ".codex-plugin/",
     ".agents/",

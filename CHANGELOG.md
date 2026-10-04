@@ -2,6 +2,10 @@
 
 What changed in Remaster, newest first. The current version of each part is in [VERSIONS.md](VERSIONS.md).
 
+## 0.2.1, 2026-10-04: Gemini CLI loads cleanly
+
+- **The Claude Code agents moved to `claude-agents/`.** Gemini CLI reads an extension's `agents/` folder as its own subagents and rejected Claude's format there, printing an error at every start. Claude Code's manifest now names the two agents directly, so they load exactly as before, and Gemini CLI never sees them.
+
 ## 0.2.0, 2026-10-04: every agent
 
 - **One command installs it for every agent.** `npx -y @thenavidm/remaster install` puts the skill where Claude Code, Codex, Cursor and Gemini CLI look for it, writes the skill's real folder into the copy for agents that don't fill it in themselves, and never overwrites a different skill named clone.
