@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "remaster",
+  "displayName": "Remaster: Clone Any App",
+  "description": "Clone any app or website with Claude Code and AI agents, then make it better and yours. Researches what the original's users hate, measures its design, rebuilds it clean-room with taste, and proves the result with scored gates before launch.",
+  "version": "0.1.0",
+  "author": { "name": "Navid Moazzez", "url": "https://navid.me" },
+  "homepage": "https://github.com/thenavidm/remaster",
+  "repository": "https://github.com/thenavidm/remaster",
+  "license": "Apache-2.0",
+  "keywords": ["clone any app", "app cloner", "website cloner", "clone website", "reverse engineering", "competitor research", "app reviews", "design system", "design tokens", "DESIGN.md", "SaaS", "open source alternative", "rebrand", "site migration"]
+}

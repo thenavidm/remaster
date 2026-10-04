@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+coverage/
+# A Remaster project folder from trying the plugin on itself
+remaster/

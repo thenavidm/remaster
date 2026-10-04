@@ -1,0 +1,448 @@
+{
+  "_about": "Rules for `remaster copy`. Tier 1 is flagged on one sighting in a heading, button or nav label; tier 2 when it shows up twice on a page; tier 3 is a note. Patterns are case-insensitive JavaScript regular expressions. Each fix says what to write instead, because a ban list alone just moves the writer to the next cliché.",
+  "words": [
+    {
+      "w": "seamless",
+      "tier": 1,
+      "fix": "Say what actually happens, with a number if you have one: \"syncs in 2 seconds\"."
+    },
+    {
+      "w": "seamlessly",
+      "tier": 1,
+      "fix": "Say what actually happens: \"imports your calendar when you sign in\"."
+    },
+    {
+      "w": "effortless",
+      "tier": 1,
+      "fix": "Name the step you removed: \"no setup call\"."
+    },
+    {
+      "w": "effortlessly",
+      "tier": 1,
+      "fix": "Name the step you removed."
+    },
+    {
+      "w": "elevate",
+      "tier": 1,
+      "fix": "Name the result: \"get paid on time\"."
+    },
+    {
+      "w": "unlock",
+      "tier": 1,
+      "fix": "Say what the reader can now do."
+    },
+    {
+      "w": "unleash",
+      "tier": 1,
+      "fix": "Say what the reader can now do."
+    },
+    {
+      "w": "supercharge",
+      "tier": 1,
+      "fix": "Say what gets faster, and by how much."
+    },
+    {
+      "w": "turbocharge",
+      "tier": 1,
+      "fix": "Say what gets faster, and by how much."
+    },
+    {
+      "w": "revolutionize",
+      "tier": 1,
+      "fix": "Say what changes for the reader on day one."
+    },
+    {
+      "w": "revolutionary",
+      "tier": 1,
+      "fix": "Show the difference instead of claiming it."
+    },
+    {
+      "w": "game-changer",
+      "tier": 1,
+      "fix": "Show the difference instead of claiming it."
+    },
+    {
+      "w": "game-changing",
+      "tier": 1,
+      "fix": "Show the difference instead of claiming it."
+    },
+    {
+      "w": "cutting-edge",
+      "tier": 1,
+      "fix": "Name the thing that's new."
+    },
+    {
+      "w": "state-of-the-art",
+      "tier": 1,
+      "fix": "Name the thing that's new."
+    },
+    {
+      "w": "next-generation",
+      "tier": 1,
+      "fix": "Name the thing that's new."
+    },
+    {
+      "w": "next-gen",
+      "tier": 1,
+      "fix": "Name the thing that's new."
+    },
+    {
+      "w": "world-class",
+      "tier": 1,
+      "fix": "Give the evidence, or cut it."
+    },
+    {
+      "w": "best-in-class",
+      "tier": 1,
+      "fix": "Give the evidence, or cut it."
+    },
+    {
+      "w": "leverage",
+      "tier": 1,
+      "fix": "Use \"use\"."
+    },
+    {
+      "w": "harness",
+      "tier": 1,
+      "fix": "Use \"use\"."
+    },
+    {
+      "w": "empower",
+      "tier": 1,
+      "fix": "Say what the reader can do now."
+    },
+    {
+      "w": "empowers",
+      "tier": 1,
+      "fix": "Say what the reader can do now."
+    },
+    {
+      "w": "streamline",
+      "tier": 1,
+      "fix": "Say which steps go away."
+    },
+    {
+      "w": "synergy",
+      "tier": 1,
+      "fix": "Cut it."
+    },
+    {
+      "w": "holistic",
+      "tier": 1,
+      "fix": "Say what is included."
+    },
+    {
+      "w": "transformative",
+      "tier": 1,
+      "fix": "Say what changes."
+    },
+    {
+      "w": "reimagine",
+      "tier": 1,
+      "fix": "Say what you did differently."
+    },
+    {
+      "w": "reimagined",
+      "tier": 1,
+      "fix": "Say what you did differently."
+    },
+    {
+      "w": "redefine",
+      "tier": 1,
+      "fix": "Say what you did differently."
+    },
+    {
+      "w": "delve",
+      "tier": 1,
+      "fix": "Use \"look at\" or cut it."
+    },
+    {
+      "w": "embark",
+      "tier": 1,
+      "fix": "Use \"start\"."
+    },
+    {
+      "w": "tapestry",
+      "tier": 1,
+      "fix": "Cut it."
+    },
+    {
+      "w": "testament",
+      "tier": 1,
+      "fix": "Cut it."
+    },
+    {
+      "w": "realm",
+      "tier": 1,
+      "fix": "Name the area."
+    },
+    {
+      "w": "skyrocket",
+      "tier": 1,
+      "fix": "Give the number."
+    },
+    {
+      "w": "hassle-free",
+      "tier": 1,
+      "fix": "Name the hassle you removed."
+    },
+    {
+      "w": "frictionless",
+      "tier": 1,
+      "fix": "Name the friction you removed."
+    },
+    {
+      "w": "lightning-fast",
+      "tier": 1,
+      "fix": "Give the time."
+    },
+    {
+      "w": "blazing",
+      "tier": 1,
+      "fix": "Give the time."
+    },
+    {
+      "w": "all-in-one",
+      "tier": 2,
+      "fix": "List the two or three things it replaces."
+    },
+    {
+      "w": "one-stop",
+      "tier": 2,
+      "fix": "List the things it replaces."
+    },
+    {
+      "w": "robust",
+      "tier": 2,
+      "fix": "Say what it survives."
+    },
+    {
+      "w": "powerful",
+      "tier": 2,
+      "fix": "Say what it can do that others can't."
+    },
+    {
+      "w": "intuitive",
+      "tier": 2,
+      "fix": "Show the one-step flow instead."
+    },
+    {
+      "w": "user-friendly",
+      "tier": 2,
+      "fix": "Show the one-step flow instead."
+    },
+    {
+      "w": "innovative",
+      "tier": 2,
+      "fix": "Name the new thing."
+    },
+    {
+      "w": "comprehensive",
+      "tier": 2,
+      "fix": "Say what's included."
+    },
+    {
+      "w": "boost",
+      "tier": 3,
+      "fix": "Give the number."
+    },
+    {
+      "w": "magic",
+      "tier": 3,
+      "fix": "Say what happens."
+    },
+    {
+      "w": "magical",
+      "tier": 3,
+      "fix": "Say what happens."
+    },
+    {
+      "w": "curated",
+      "tier": 3,
+      "fix": "Say who picked it and how."
+    },
+    {
+      "w": "crafted",
+      "tier": 3,
+      "fix": "Say what was made, by whom."
+    },
+    {
+      "w": "journey",
+      "tier": 3,
+      "fix": "Name the steps."
+    },
+    {
+      "w": "enterprise-grade",
+      "tier": 3,
+      "fix": "Name the guarantee (SSO, SLA, audit log)."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "not-just",
+      "re": "\\bnot just (?:a|an|the|another|your|our)\\b[^.!?]{0,60}?\\b(?:it's|it is|but also|but)\\b|\\b(?:isn't|is not|aren't|are not) just (?:a|an|the|another)\\b|\\bmore than just\\b",
+      "tier": 1,
+      "fix": "Say the one thing it is, once."
+    },
+    {
+      "id": "whether-youre",
+      "re": "\\bwhether you(?:'re| are)\\b.{3,60}\\bor\\b",
+      "tier": 1,
+      "fix": "Pick the one reader this page is for."
+    },
+    {
+      "id": "todays-world",
+      "re": "\\bin today's (?:fast-paced|digital|ever-changing|modern|busy)\\b",
+      "tier": 1,
+      "fix": "Start with the reader's problem."
+    },
+    {
+      "id": "say-goodbye",
+      "re": "\\b(?:say|bid) goodbye to\\b",
+      "tier": 1,
+      "fix": "Name what they stop doing."
+    },
+    {
+      "id": "future-is-here",
+      "re": "\\bthe future of [\\w ]{2,30} is (?:here|now)\\b",
+      "tier": 1,
+      "fix": "Say what it does today."
+    },
+    {
+      "id": "next-level",
+      "re": "\\b(?:to|on) the next level\\b",
+      "tier": 1,
+      "fix": "Say where it goes, concretely."
+    },
+    {
+      "id": "look-no-further",
+      "re": "\\blook no further\\b",
+      "tier": 1,
+      "fix": "Cut it."
+    },
+    {
+      "id": "dive-in",
+      "re": "\\bdive (?:in|into|deep)\\b",
+      "tier": 1,
+      "fix": "Use \"start\" or \"read\"."
+    },
+    {
+      "id": "ultimate",
+      "re": "\\b(?:the|your) (?:ultimate|only) [\\w ]{2,30}(?:you'll ever need|you need)\\b",
+      "tier": 1,
+      "fix": "Say who it is for and what it does."
+    },
+    {
+      "id": "everything-you-need",
+      "re": "\\beverything you need to\\b",
+      "tier": 2,
+      "fix": "List the two or three things."
+    },
+    {
+      "id": "triad",
+      "re": "\\b(\\w+er)[,.] (\\w+er)[,.] (?:and )?(\\w+er)\\b",
+      "tier": 2,
+      "fix": "One adjective with a reason beats three without."
+    },
+    {
+      "id": "imagine",
+      "re": "^(?:imagine|what if you could)\\b",
+      "tier": 2,
+      "fix": "Show it instead of asking them to imagine it."
+    },
+    {
+      "id": "its-time",
+      "re": "\\bit's time to\\b",
+      "tier": 2,
+      "fix": "Cut it."
+    },
+    {
+      "id": "introducing",
+      "re": "^(?:introducing|meet)\\b",
+      "tier": 3,
+      "fix": "Lead with what it does."
+    }
+  ],
+  "proof": [
+    {
+      "id": "user-count",
+      "re": "\\b\\d[\\d,.]*\\s*(?:k|m|\\+)?\\+?\\s*(?:users|customers|teams|companies|businesses|creators|developers|downloads|members|subscribers|people)\\b"
+    },
+    {
+      "id": "trusted-by",
+      "re": "\\b(?:trusted|loved|used) by\\b"
+    },
+    {
+      "id": "rating",
+      "re": "(?:★{3,}|\\b[1-5](?:\\.\\d)?\\s*(?:/|out of)\\s*5\\b|\\b[1-5]\\.\\d stars?\\b)"
+    },
+    {
+      "id": "number-one",
+      "re": "(?:#1\\b|\\bnumber one\\b|\\baward-winning\\b)"
+    },
+    {
+      "id": "as-seen-in",
+      "re": "\\b(?:as seen (?:in|on)|featured in)\\b"
+    }
+  ],
+  "placeholders": [
+    {
+      "re": "\\blorem ipsum\\b",
+      "flags": "i"
+    },
+    {
+      "re": "\\bdolor sit amet\\b",
+      "flags": "i"
+    },
+    {
+      "re": "\\bTODO\\b:?",
+      "flags": ""
+    },
+    {
+      "re": "\\bTBD\\b",
+      "flags": ""
+    },
+    {
+      "re": "\\bFIXME\\b",
+      "flags": ""
+    },
+    {
+      "re": "\\b(?:john|jane) doe\\b",
+      "flags": "i"
+    },
+    {
+      "re": "\\b(?:your|the) company name\\b|\\byour company\\b",
+      "flags": "i"
+    },
+    {
+      "re": "\\[(?:name|company|title|date|product|link|url)\\]",
+      "flags": "i"
+    },
+    {
+      "re": "\\b(?:user|name|you)@example\\.com\\b|\\bexample\\.com\\b",
+      "flags": "i"
+    },
+    {
+      "re": "\\b(?:asdf|qwerty|foo bar|test test)\\b",
+      "flags": "i"
+    }
+  ],
+  "generic_buttons": [
+    "submit",
+    "ok",
+    "okay",
+    "click here",
+    "go",
+    "yes",
+    "no",
+    "send"
+  ],
+  "vague_errors": [
+    "oops",
+    "uh-oh",
+    "uh oh",
+    "something went wrong",
+    "an error occurred",
+    "error occurred"
+  ]
+}

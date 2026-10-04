@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "remaster",
+  "owner": { "name": "Navid Moazzez", "url": "https://navid.me" },
+  "description": "Install Remaster, the plugin that clones any app or website and makes it better and yours.",
+  "plugins": [
+    {
+      "name": "remaster",
+      "source": "./",
+      "description": "Clone any app or website, then make it better and yours: research, measured design, clean-room build, scored gates, launch.",
+      "license": "Apache-2.0",
+      "keywords": ["clone any app", "app cloner", "website cloner", "reverse engineering", "design system", "competitor research"]
+    }
+  ]
+}

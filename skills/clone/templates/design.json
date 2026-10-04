@@ -1,0 +1,60 @@
+{
+  "name": "Your product",
+  "description": "One line on what it looks and feels like.",
+  "direction": "The direction the user picked, in one sentence.",
+  "colors": {
+    "canvas": "#f7f6f2",
+    "surface": "#ffffff",
+    "ink": "#1b1a17",
+    "ink-soft": "#5c5850",
+    "accent": "#1f6f5c",
+    "on-accent": "#ffffff",
+    "border": "#e4e1d8",
+    "border-input": "#8f8a7e",
+    "danger": "#b42318",
+    "success": "#1e7a46",
+    "warning": "#a15c07"
+  },
+  "dark": {
+    "canvas": "#141310",
+    "surface": "#1d1c18",
+    "ink": "#f1efe8",
+    "ink-soft": "#b3aea3",
+    "accent": "#5cc2a6",
+    "on-accent": "#0b1f19",
+    "border": "#2e2c26",
+    "border-input": "#7d786c"
+  },
+  "typography": {
+    "display": { "fontFamily": "\"Cabinet Grotesk\", ui-sans-serif, system-ui, sans-serif", "fontSize": "56px", "fontWeight": 700, "lineHeight": "1.02", "letterSpacing": "-0.025em" },
+    "h1": { "fontFamily": "\"Cabinet Grotesk\", ui-sans-serif, system-ui, sans-serif", "fontSize": "36px", "fontWeight": 700, "lineHeight": "1.1", "letterSpacing": "-0.02em" },
+    "h2": { "fontFamily": "\"Cabinet Grotesk\", ui-sans-serif, system-ui, sans-serif", "fontSize": "24px", "fontWeight": 700, "lineHeight": "1.2", "letterSpacing": "-0.01em" },
+    "body": { "fontFamily": "\"Geist\", ui-sans-serif, system-ui, sans-serif", "fontSize": "16px", "fontWeight": 400, "lineHeight": "1.55" },
+    "small": { "fontFamily": "\"Geist\", ui-sans-serif, system-ui, sans-serif", "fontSize": "14px", "fontWeight": 400, "lineHeight": "1.45" },
+    "label": { "fontFamily": "\"Geist\", ui-sans-serif, system-ui, sans-serif", "fontSize": "14px", "fontWeight": 600, "lineHeight": "1.2" }
+  },
+  "rounded": { "sm": "6px", "md": "10px", "lg": "16px", "full": "9999px" },
+  "spacing": { "1": "4px", "2": "8px", "3": "12px", "4": "16px", "6": "24px", "8": "32px", "12": "48px", "16": "64px" },
+  "elevation": {
+    "raised": "0 1px 2px rgb(27 26 23 / 0.06), 0 2px 8px rgb(27 26 23 / 0.06)",
+    "overlay": "0 12px 32px rgb(27 26 23 / 0.16)"
+  },
+  "motion": { "fast": "140ms", "base": "220ms", "ease": "cubic-bezier(0.2, 0.8, 0.2, 1)" },
+  "components": {
+    "button-primary": { "backgroundColor": "{colors.accent}", "textColor": "{colors.on-accent}", "rounded": "{rounded.md}", "padding": "10px 16px", "typography": "{typography.label}" },
+    "button-secondary": { "backgroundColor": "{colors.surface}", "textColor": "{colors.ink}", "rounded": "{rounded.md}", "padding": "10px 16px", "typography": "{typography.label}" },
+    "input": { "backgroundColor": "{colors.surface}", "textColor": "{colors.ink}", "rounded": "{rounded.sm}", "padding": "10px 12px", "typography": "{typography.body}" },
+    "card": { "backgroundColor": "{colors.surface}", "rounded": "{rounded.lg}", "padding": "24px" }
+  },
+  "notes": {
+    "accent": "Primary buttons, links, focus rings and the one thing on each screen that matters most",
+    "ink-soft": "Secondary text, captions, placeholders",
+    "border-input": "Edges of inputs and controls, which need 3:1"
+  },
+  "prose": {
+    "overview": "What the product should feel like, and the one signature detail someone would remember without the logo.",
+    "layout": "Content width, grid, density. Product screens are dense; marketing pages breathe."
+  },
+  "dos": ["One accent per screen, used for the one action that matters"],
+  "donts": ["Gradient headlines, glowing buttons, emoji as icons"]
+}
