@@ -4,7 +4,7 @@ description: Clone any app or website, then make it better and yours. Researches
 license: Apache-2.0
 compatibility: Node 18 or later runs the bundled scripts, with no installs. A browser tool, or Playwright in the project, measures pages. ffmpeg is optional, for screen recordings.
 metadata:
-  version: "0.1.0"
+  version: "0.2.0"
   author: Navid Moazzez
 ---
 
@@ -22,7 +22,7 @@ Every `remaster <command>` below is short for:
 node "${CLAUDE_SKILL_DIR}/scripts/remaster.mjs" <command>
 ```
 
-Always run that full form. If `${CLAUDE_SKILL_DIR}` shows up literally, use the folder this SKILL.md is in. Node 18 or later, nothing to install. Run commands from the project folder; they keep everything in `remaster/` there. `remaster <command> --help` gives a command's options.
+Always run that full form, from the project folder: the commands keep everything in `remaster/` there. If the path above isn't a real folder on this machine (some agents leave that variable unfilled), use the folder this SKILL.md is in, or run the same CLI from npm: `npx -y @thenavidm/remaster@0.2.0 <command>`. Node 18 or later, nothing else to install. `remaster <command> --help` gives a command's options.
 
 ## Start or resume
 

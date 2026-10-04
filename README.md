@@ -1,14 +1,15 @@
 # Remaster: clone any app or website with Claude Code, then make it better
 
-[![Version](https://img.shields.io/badge/version-0.1.0-blue)](./CHANGELOG.md)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](./LICENSE)
+[![npm](https://img.shields.io/npm/v/@thenavidm%2Fremaster?color=orange&label=npm)](https://www.npmjs.com/package/@thenavidm/remaster)
+[![Version](https://img.shields.io/badge/version-0.2.0-blue)](https://github.com/thenavidm/remaster/blob/main/CHANGELOG.md)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue)](https://github.com/thenavidm/remaster/blob/main/LICENSE)
 [![YouTube](https://img.shields.io/badge/YouTube-@thenavidm-red?logo=youtube&logoColor=white)](https://youtube.com/@thenavidm?sub_confirmation=1)
 [![X](https://img.shields.io/badge/X-@thenavidm-black?logo=x)](https://x.com/thenavidm)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-thenavidm-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/thenavidm)
 
 App and website cloner for Claude Code and AI agents. Remaster rebuilds what any app or website does and how it feels to use, then makes it better and yours: it reads what the original's users hate, measures its design from the live page, rebuilds it clean-room with real taste, and proves the result with scored gates before you launch.
 
-It works in four modes: a full app, a single site or page, one feature into an app you already have, or a site you own moved to a new stack. It ships one skill, two Claude Code agents, 20 commands in a dependency-free Node CLI, and 9 reference documents that carry the method.
+It works in four modes: a full app, a single site or page, one feature into an app you already have, or a site you own moved to a new stack. It ships one skill, two Claude Code agents, 21 commands in a dependency-free Node CLI, and 9 reference documents that carry the method. It runs in Claude Code, Codex, Gemini CLI, Cursor and any agent that reads Agent Skills.
 
 Built by [Navid Moazzez](https://navid.me).
 
@@ -19,7 +20,7 @@ Built by [Navid Moazzez](https://navid.me).
 | 1 | [What it is](#1-what-it-is-) | The idea, and what it refuses to be |
 | 2 | [What you can ask it](#2-what-you-can-ask-it-) | Real requests |
 | 3 | [Real runs](#3-real-runs-) | Output from the scripts on real sites |
-| 4 | [Install](#4-install-) | Claude Code, Codex, Cursor, Gemini CLI, claude.ai |
+| 4 | [Install](#4-install-) | One command for every agent, or the Claude Code, Codex and Gemini CLI plugins |
 | 5 | [Setup](#5-setup-) | Node, a browser, and your profile |
 | 6 | [How it works](#6-how-it-works-) | Four stages, each ending at a gate |
 | 7 | [Modes](#7-modes-) | App, site, feature and migrate, and the bar for each |
@@ -104,47 +105,49 @@ Real output from the bundled scripts, trimmed to fit. Nothing in a Remaster proj
 
 ## 4. Install ⚡
 
+**Any agent, one command**
+
+```bash
+npx -y @thenavidm/remaster install
+```
+
+That puts the skill in `~/.claude/skills/clone` for Claude Code and in `~/.agents/skills/clone`, the shared folder Codex, Cursor and Gemini CLI all read. Add `--agent codex` (or `claude`, `cursor`, `gemini`) for one of them, `--project` to install into the current project instead, and `--remove` to take it out. Start a new session afterwards.
+
 **Claude Code, as a plugin**
 
-1. Open Claude Code.
-2. Add the marketplace:
-   ```
-   /plugin marketplace add thenavidm/remaster
-   ```
-3. Install the plugin:
-   ```
-   /plugin install remaster@remaster
-   ```
-4. Run `/reload-plugins`, or start a new session.
-5. Type `/remaster:clone` and a URL, or just ask for a clone.
+1. Add the marketplace: `/plugin marketplace add thenavidm/remaster`
+2. Install the plugin: `/plugin install remaster@remaster`
+3. Run `/reload-plugins`, or start a new session.
+4. Type `/remaster:clone` and a URL, or just ask for a clone.
 
 The plugin also adds two agents Claude Code runs in parallel: `remaster:design-critic` and `remaster:screen-builder`.
 
-**Claude Code, without the plugin system**
+**Codex, as a plugin**
 
-1. Clone the repo and copy the skill into your personal skills:
-   ```bash
-   git clone https://github.com/thenavidm/remaster
-   cp -r remaster/skills/clone ~/.claude/skills/clone
-   ```
-2. Start a new session and type `/clone`. Without the plugin, the two agents aren't there, and the skill does their work in one thread.
+```bash
+codex plugin marketplace add thenavidm/remaster
+codex plugin add remaster@remaster
+```
 
-**Codex, Cursor and Gemini CLI**
+Start a new session, then call it with `$clone`, or just ask for a clone.
 
-All three read skills from `~/.agents/skills/`, or from `.agents/skills/` inside one project.
+**Gemini CLI, as an extension**
 
-1. Copy the skill there:
-   ```bash
-   git clone https://github.com/thenavidm/remaster
-   mkdir -p ~/.agents/skills && cp -r remaster/skills/clone ~/.agents/skills/clone
-   ```
-2. Restart the agent. In Codex, call it with `$clone`; in any of them, asking for a clone picks it from its description.
+```bash
+gemini extensions install https://github.com/thenavidm/remaster
+```
 
-Each agent's own docs: [Codex](https://learn.chatgpt.com/docs/build-skills), [Cursor](https://cursor.com/docs/skills), [Gemini CLI](https://geminicli.com/docs/cli/creating-skills/).
+Gemini CLI offers to activate the skill when you ask for a clone.
+
+**Cursor and any other agent that reads Agent Skills**
+
+Use the one-command install above, or copy `skills/clone` into the agent's skills folder. In an agent that doesn't fill in the skill's folder for its scripts, the skill says to use its own folder, or the same CLI from npm: `npx -y @thenavidm/remaster@0.2.0 <command>`. Each agent's own docs: [Codex](https://learn.chatgpt.com/docs/build-skills), [Cursor](https://cursor.com/docs/skills), [Gemini CLI](https://geminicli.com/docs/cli/creating-skills/).
 
 **claude.ai**
 
 Zip the `skills/clone` folder and upload it under Settings, Capabilities, Skills. The method and the checks work there. Measuring live pages needs a browser, so the full flow is best in a coding agent.
+
+**Tested on 2026-10-04:** Claude Code (plugin install from GitHub, skill and both agents registered), Codex (plugin install, and a full run of the skill from `.agents/skills`), and Gemini CLI (extension validated, skill discovered and enabled).
 
 ## 5. Setup 🪄
 
@@ -205,12 +208,13 @@ DESIGN.md           Your design system, in Google Labs' format, for any coding a
 Plain Node, no dependencies. Your agent runs them; you can too, from the project folder:
 
 ```bash
-node ~/.claude/skills/clone/scripts/remaster.mjs <command>   # or wherever the skill lives
+npx -y @thenavidm/remaster <command>
 ```
 
 | Job | Command | What it does |
 |---|---|---|
-| Project | `init`, `status`, `gate` | Start a project, see where it stands, run and record a stage's checks |
+| Project | `install` | Put the skill where Claude Code, Codex, Cursor and Gemini CLI look for it |
+| | `init`, `status`, `gate` | Start a project, see where it stands, run and record a stage's checks |
 | Research | `store lookup`, `store reviews` | App Store listing, screenshots and up to 500 reviews per country, from Apple's public endpoints |
 | | `hn` | Hacker News comments mentioning the product, with links |
 | | `crawl` | A help center or docs site into markdown, obeying robots.txt and following redirects |
@@ -259,11 +263,16 @@ The method lives in `skills/clone/references/`. The skill reads each one when it
 
 This is how the product stays yours to sell. It is not legal advice: when a launch depends on it, talk to a lawyer in your country.
 
+**What it connects to.** Nothing in the background, and no telemetry. Only the requests you ask for: the pages and help centers of the product you are studying (in a clean browser, obeying robots.txt), Apple's public lookup and reviews endpoints, the Hacker News search API, the domain registries' RDAP servers and Cloudflare's public DNS resolver for domain checks, and the npm registry if you run it through `npx`. Every request names itself as RemasterResearch with a link to this repository. Details in [SECURITY.md](https://github.com/thenavidm/remaster/blob/main/SECURITY.md) and [PRIVACY.md](https://github.com/thenavidm/remaster/blob/main/PRIVACY.md).
+
 ## 12. Repository layout 📂
 
 ```
 remaster/
-  .claude-plugin/        plugin.json and marketplace.json
+  .claude-plugin/        Claude Code plugin and marketplace manifests
+  .codex-plugin/         The Codex plugin manifest
+  .agents/plugins/       The Codex marketplace file
+  gemini-extension.json  The Gemini CLI extension manifest
   skills/clone/
     SKILL.md             The skill: what the agent reads first
     references/          The method, 9 documents, read stage by stage
@@ -278,11 +287,12 @@ remaster/
   AGENTS.md              Rules for agents editing this repo
   CHANGELOG.md           What changed, newest first
   VERSIONS.md            The current version of each part
+  PRIVACY.md, SECURITY.md  What it reaches, what it writes, and how to report a problem
 ```
 
 ## 13. Versions and updates 🔄
 
-Semantic versions, tagged `vX.Y.Z` with a GitHub release whose notes come from [CHANGELOG.md](CHANGELOG.md).
+Semantic versions, tagged `vX.Y.Z` with a GitHub release whose notes come from [CHANGELOG.md](https://github.com/thenavidm/remaster/blob/main/CHANGELOG.md).
 
 | Change | Bump |
 |---|---|
@@ -290,7 +300,7 @@ Semantic versions, tagged `vX.Y.Z` with a GitHub release whose notes come from [
 | A new command, check, mode or reference | Minor |
 | A renamed or removed command, flag, file or measurement field that projects depend on | Major |
 
-Projects keep their files in `remaster/` by fixed names, and measurement JSON carries a format version (`v`), so an update never breaks a project halfway through. To update: `claude plugin update remaster@remaster` from your shell, or `git pull` and copy the skill folder again. The current version is in [VERSIONS.md](VERSIONS.md).
+Projects keep their files in `remaster/` by fixed names, and measurement JSON carries a format version (`v`), so an update never breaks a project halfway through. To update: `npx -y @thenavidm/remaster@latest install` again, `claude plugin update remaster@remaster`, `codex plugin marketplace upgrade`, or `gemini extensions update remaster`. The current version is in [VERSIONS.md](https://github.com/thenavidm/remaster/blob/main/VERSIONS.md).
 
 ## 14. Gotchas ⚠️
 
@@ -332,6 +342,7 @@ Projects keep their files in `remaster/` by fixed names, and measurement JSON ca
 | `sweep` flags a mention you need | An "Import from <original>" feature, say | Add the file or the exact string to `allow` in remaster/brand.json, or mark the line `remaster-allow` |
 | `domain` says unknown | The registry has no RDAP server and DNS didn't answer | Check at a registrar |
 | `/remaster:clone` doesn't appear | The plugin isn't installed or enabled | Open `/plugin` to check, then run `/reload-plugins` |
+| Gemini CLI stops with `IneligibleTierError` | Google retired the free individual sign-in for Gemini CLI | Sign in with a Gemini API key or a paid plan, then run it again |
 | `interact` finds no reveals on a page that clearly animates | The animation runs on a canvas, or in JavaScript after the sweep looked | Mask that region and judge it from the scroll screenshots |
 
 ## 16. FAQ ❓
@@ -345,7 +356,7 @@ Rebuilding what an app does is how most software competes: features, flows and i
 <details>
 <summary><strong>Does it only work with Claude Code?</strong></summary>
 
-No. The method is markdown and the scripts are plain Node, so any agent that reads Agent Skills can run it: Codex, Cursor and Gemini CLI included. The two agents for parallel builds and design reviews are Claude Code's; elsewhere the skill does that work in one thread.
+No. It installs natively as a Codex plugin and a Gemini CLI extension, and `npx -y @thenavidm/remaster install` puts it where Claude Code, Codex, Cursor and Gemini CLI all look. The method is markdown and the scripts are plain Node, so any agent that reads Agent Skills can run it. The two agents for parallel builds and design reviews are Claude Code's; elsewhere the skill does that work in one thread.
 </details>
 
 <details>
@@ -423,7 +434,7 @@ Navid Moazzez is a leading AI business strategist, and the host of the AI Creato
 
 ## License ⚖️
 
-Apache 2.0, see [LICENSE](LICENSE). Free to use, modify, and share.
+Apache 2.0, see [LICENSE](https://github.com/thenavidm/remaster/blob/main/LICENSE). Free to use, modify, and share.
 
 Not affiliated with, endorsed by, or connected to Apple, Y Combinator, Algolia, or any product you study or clone with it.
 

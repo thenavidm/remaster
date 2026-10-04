@@ -1,12 +1,56 @@
 {
   "name": "@thenavidm/remaster",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Clone any app or website with Claude Code and AI agents, then make it better and yours.",
+  "version": "0.2.0",
+  "description": "Clone any app or website with Claude Code, Codex, Gemini CLI and other AI agents, then make it better and yours.",
   "type": "module",
   "license": "Apache-2.0",
   "author": "Navid Moazzez (https://navid.me)",
-  "engines": { "node": ">=18" },
+  "homepage": "https://github.com/thenavidm/remaster#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thenavidm/remaster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thenavidm/remaster/issues"
+  },
+  "keywords": [
+    "clone any app",
+    "app cloner",
+    "website cloner",
+    "claude code",
+    "codex",
+    "gemini cli",
+    "agent skills",
+    "reverse engineering",
+    "design tokens",
+    "DESIGN.md",
+    "competitor research",
+    "site migration"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "remaster": "skills/clone/scripts/remaster.mjs"
+  },
+  "files": [
+    "skills/",
+    "agents/",
+    ".claude-plugin/",
+    ".codex-plugin/",
+    ".agents/",
+    "gemini-extension.json",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md",
+    "VERSIONS.md",
+    "PRIVACY.md",
+    "SECURITY.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "check": "node --check skills/clone/scripts/remaster.mjs && node -e \"for (const f of require('fs').readdirSync('skills/clone/scripts/commands')) require('child_process').execFileSync(process.execPath, ['--check', 'skills/clone/scripts/commands/' + f])\""

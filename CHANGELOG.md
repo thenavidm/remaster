@@ -2,6 +2,14 @@
 
 What changed in Remaster, newest first. The current version of each part is in [VERSIONS.md](VERSIONS.md).
 
+## 0.2.0, 2026-10-04: every agent
+
+- **One command installs it for every agent.** `npx -y @thenavidm/remaster install` puts the skill where Claude Code, Codex, Cursor and Gemini CLI look for it, writes the skill's real folder into the copy for agents that don't fill it in themselves, and never overwrites a different skill named clone.
+- **Native plugins beyond Claude Code.** A Codex plugin and marketplace (`codex plugin marketplace add thenavidm/remaster`) and a Gemini CLI extension (`gemini extensions install https://github.com/thenavidm/remaster`), from the same repository.
+- **On npm.** `npx -y @thenavidm/remaster <command>` runs every check in any agent or terminal, with nothing else installed.
+- **Tested in the agents themselves.** Codex ran the skill end to end from `.agents/skills`, including from a copy where the script path was left for it to work out. Gemini CLI validated the extension and discovered the skill.
+- **Ready for Anthropic's plugin directory**, with documentation, support, privacy and terms links in the manifest, and a PRIVACY.md.
+
 ## 0.1.0, 2026-10-04: the first release
 
 - **One skill, four modes.** `/remaster:clone` clones a full app, a site or page, one feature into an app you already have, or a site you own onto a new stack. The mode sets what may be copied and which bars apply.

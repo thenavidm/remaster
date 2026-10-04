@@ -8,6 +8,7 @@
 import { parseArgs } from './lib/args.mjs';
 
 const COMMANDS = {
+  install: 'Install the skill for Claude Code, Codex, Cursor and Gemini CLI',
   init: 'Start a Remaster project in this folder',
   status: 'Where the project is, what passed, what to do next',
   store: 'App Store lookup and reviews (official public feeds)',
@@ -30,7 +31,7 @@ const COMMANDS = {
   gate: 'Run a stage\'s checks and record the result',
 };
 
-const BOOLEANS = ['json', 'help', 'headed', 'snippet', 'force', 'owner', 'render', 'sitemap', 'markdown', 'pixel', 'dashes-ok', 'quiet', 'no-screens', 'strict'];
+const BOOLEANS = ['json', 'help', 'headed', 'snippet', 'force', 'owner', 'render', 'sitemap', 'markdown', 'pixel', 'dashes-ok', 'quiet', 'no-screens', 'strict', 'project', 'remove'];
 
 function usage() {
   const width = Math.max(...Object.keys(COMMANDS).map((k) => k.length));

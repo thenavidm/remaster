@@ -2,11 +2,24 @@
 
 | Component | Version | Date |
 |---|---|---|
-| Remaster (plugin `remaster`, skill `clone`) | 0.1.0 | 2026-10-04 |
-| CLI (`skills/clone/scripts/remaster.mjs`, 20 commands) | 0.1.0 | 2026-10-04 |
+| Remaster (plugin `remaster`, skill `clone`, npm `@thenavidm/remaster`) | 0.2.0 | 2026-10-04 |
+| CLI (`skills/clone/scripts/remaster.mjs`, 21 commands) | 0.2.0 | 2026-10-04 |
 | Measurement format (`browser/measure.js`, field `v`) | 1 | 2026-10-04 |
 | Agents (`design-critic`, `screen-builder`) | 0.1.0 | 2026-10-04 |
+| Codex plugin, Gemini CLI extension | 0.2.0 | 2026-10-04 |
 | Node | 18 or later | |
+
+## 0.2.0
+
+Every agent.
+
+**In**
+
+- `remaster install`: the skill for Claude Code, Codex, Cursor and Gemini CLI in one step, with the real script path written in for agents that need it.
+- A Codex plugin and marketplace, and a Gemini CLI extension, in the same repository.
+- The npm package `@thenavidm/remaster`, so `npx` runs any command anywhere.
+- Directory listing links in the Claude Code manifest, and PRIVACY.md.
+- 37 tests.
 
 ## 0.1.0
 

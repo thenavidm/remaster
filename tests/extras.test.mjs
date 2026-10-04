@@ -79,3 +79,26 @@ test('fsx: interaction sweeps are not page measurements', () => {
   for (const f of ['home@1440.json', 'home@1440.interact.json', 'home@390.json']) fs.writeFileSync(path.join(dir, f), '{}');
   assert.deepEqual(measurements(dir).map((f) => path.basename(f)), ['home@1440.json', 'home@390.json']);
 });
+
+test('install: every agent family, the real path for agents that need it, and no clobbering', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), 'remaster-home-'));
+  const env = { ...process.env, HOME: home, USERPROFILE: home };
+  const r = spawnSync(process.execPath, [CLI, 'install'], { cwd: home, env, encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stderr);
+  const claude = fs.readFileSync(path.join(home, '.claude', 'skills', 'clone', 'SKILL.md'), 'utf8');
+  const agents = fs.readFileSync(path.join(home, '.agents', 'skills', 'clone', 'SKILL.md'), 'utf8');
+  assert.match(claude, /\$\{CLAUDE_SKILL_DIR\}\/scripts\/remaster\.mjs/, 'Claude Code fills the variable itself');
+  assert.ok(!agents.includes('${CLAUDE_SKILL_DIR}'), 'other agents get the real folder');
+  assert.ok(agents.includes(path.join(home, '.agents', 'skills', 'clone', 'scripts', 'remaster.mjs')));
+  assert.ok(fs.existsSync(path.join(home, '.agents', 'skills', 'clone', 'scripts', 'commands', 'measure.mjs')));
+  const other = path.join(home, '.claude', 'skills', 'clone');
+  fs.rmSync(other, { recursive: true });
+  fs.mkdirSync(other, { recursive: true });
+  fs.writeFileSync(path.join(other, 'SKILL.md'), '---\nname: clone\n---\n# Someone else\'s clone skill\n');
+  const again = spawnSync(process.execPath, [CLI, 'install', '--agent', 'claude'], { cwd: home, env, encoding: 'utf8' });
+  assert.equal(again.status, 1);
+  assert.match(fs.readFileSync(path.join(other, 'SKILL.md'), 'utf8'), /Someone else/);
+  const rm = spawnSync(process.execPath, [CLI, 'install', '--agent', 'codex', '--remove'], { cwd: home, env, encoding: 'utf8' });
+  assert.equal(rm.status, 0);
+  assert.ok(!fs.existsSync(path.join(home, '.agents', 'skills', 'clone')));
+});

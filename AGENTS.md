@@ -16,7 +16,9 @@ README).
 | `skills/clone/scripts/data/` | The copy rules and the generic phrases the copy check skips |
 | `skills/clone/templates/` | What `init` copies into a project, and the design, listing and profile templates |
 | `agents/` | The two Claude Code agents. Their rules live in the skill's references, so the agents point there |
-| `.claude-plugin/` | The plugin and marketplace manifests |
+| `.claude-plugin/` | The Claude Code plugin and marketplace manifests |
+| `.codex-plugin/plugin.json`, `.agents/plugins/marketplace.json` | The Codex plugin and its marketplace, pointing at the same `skills/` |
+| `gemini-extension.json` | The Gemini CLI extension, which reads the same `skills/` |
 | `tests/` | `node:test`, no dependencies |
 
 ## Commands
@@ -27,6 +29,8 @@ README).
 | `npm run check` | Syntax check of the CLI and every command module |
 | `claude plugin validate . --strict` | The marketplace manifest |
 | `claude plugin validate .claude-plugin/plugin.json --strict` | The plugin manifest |
+| `gemini extensions validate .` | The Gemini CLI extension |
+| `CODEX_HOME=$(mktemp -d) codex plugin marketplace add . && codex plugin add remaster@remaster` | The Codex plugin, in a throwaway Codex home |
 | `node skills/clone/scripts/remaster.mjs <command> --help` | Any command's options |
 
 ## Decisions already made, do not re-litigate
@@ -39,6 +43,7 @@ README).
 - **Scripts check, the agent judges.** The model reads reviews and groups themes; code verifies every quote and count. The model looks at screenshots; code measures structure and contrast. Never hand a judgment to a regex or a measurement to the model.
 - **Research stays private.** `init` adds `remaster/research/` to the user's .gitignore, and the sweep skips that folder.
 - **The clean-room line is not a setting.** No flag reads the original's code, logs into another account or gets past a login. Migrate mode is the only place copying is allowed, and only with `--owner`.
+- **One skill folder for every agent.** Claude Code, Codex and Gemini CLI all read `skills/clone`. Agents that don't substitute `${CLAUDE_SKILL_DIR}` get the real path from `remaster install`, or follow SKILL.md's fallback to its own folder or the pinned npx command.
 - **CLAUDE.md lives in `.claude/`.** Claude Code's plugin validator warns about a CLAUDE.md at the plugin root, which is this repo's root.
 
 ## Adding a command
@@ -53,7 +58,8 @@ README).
 1. `npm run check && npm test`
 2. Both `claude plugin validate` commands above, with `--strict`.
 3. A real run of anything you changed: a real page for `measure`, `tokens` and `diff`; a real help center for `crawl`; real reviews for `store`, `hn` and `pains`.
-4. The version in step with every place it appears: `.claude-plugin/plugin.json`, the skill's `metadata.version`, `package.json`, `VERSIONS.md`, the README badge, and a CHANGELOG entry.
+4. The version in step with every place it appears: `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`, `gemini-extension.json`, `package.json`, the skill's `metadata.version` and its pinned `npx -y @thenavidm/remaster@<version>` line, `VERSIONS.md`, the README badge and its pinned npx line, and a CHANGELOG entry.
+5. After pushing, publish the same version to npm. npm serves the README from the tarball, so a README fix needs a new version.
 
 ## Rules
 
